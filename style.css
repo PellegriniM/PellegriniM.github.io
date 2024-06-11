@@ -24,7 +24,6 @@ input {
     text-align: center;
 }
 #contenido h1 {
-    text-shadow: 0 0 15px red;
     text-decoration:underline;
 }
 #contenido p{
