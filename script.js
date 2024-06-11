@@ -1,9 +1,10 @@
-const usuarioPermitido = "juan";
+const usuarioPermitido = "juan"; // Nombre
 
 function capitalizarTexto(texto) {
     return texto.charAt(0).toUpperCase() + texto.substring(1);
 }
 
+// Principal
 function ingresar(){
 
     const pantalla = document.getElementById("pantalla");
@@ -16,39 +17,34 @@ function ingresar(){
 
     if (nombre != usuarioPermitido) {
         pantalla.innerHTML = `El usuario: ${capitalizarTexto(nombre)} no esta habilitado para entrar!`
-    } else {     
+    } else {
         if (!verificarFecha()) {
-            pantalla.innerHTML = "La pagina solo se podra abrir el dia 12 de Junio"
+            pantalla.innerHTML = "La pagina solo se podra abrir el dia 11 de Junio"
         }
         else {
             pantalla.innerHTML = `Huy quien entro aca?`
-            setTimeout(cumple, 3000);
+            setTimeout(mensaje, 3000);
         }
-
-
-
     }
 }
-
 function verificarFecha() {
     var fechaActual = new Date();
     var dia = fechaActual.getDate();
-    var mes = fechaActual.getMonth() + 1; // El mes es devuelto de 0 a 11, sumamos 1 para ajustar
+    var mes = fechaActual.getMonth() + 1;
 
-    if (dia === 12 && mes === 6) {
-        console.log("¡Hoy es el 12 de junio!");
+    if (dia === 11 && mes === 6) {
+        console.log("¡Hoy es el 11 de junio!");
         return true;
     } else {
-        console.log("La fecha actual no es el 12 de junio.");
+        console.log("La fecha actual no es el 11 de junio.");
         return false;
     }
 }
 
-function cumple() {
+function mensaje() {
 
     document.getElementById('login').style.display = 'none';
     document.getElementById('contenido').classList.remove('oculto');
 
     document.title = "FELIZ CUMPLE JUANCHO!"
 }
-
